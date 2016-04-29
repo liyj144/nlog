@@ -1,0 +1,19 @@
+package isserverpb;
+
+message UserStatusChangeRequest {
+        enum EventType {
+                ONLINE = 0;
+                OFFLINE = 1;
+        }
+        enum FieldType {
+                UID = 0;
+                DEVICEID = 1;
+        }
+
+        required EventType event_type = 1;
+        required FieldType field_type = 2;
+        optional uint64      uid      = 3;
+        optional bytes    device_id = 4;
+
+
+}

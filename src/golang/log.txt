@@ -1,0 +1,339 @@
+Revision: 5506
+Author: cym
+Date: 2015年5月11日 17:51:41
+Message:
+add driver and conf file
+----
+Added : /dev/golang/pre_push_agent.go
+Added : /dev/golang/pre_tcp_agent.go
+Added : /dev/golang/pushd.conf
+Added : /dev/golang/status_server/status.conf
+Added : /dev/golang/tcpd.conf
+
+Revision: 5505
+Author: cym
+Date: 2015年5月11日 17:48:24
+Message:
+pb update
+----
+Modified : /dev/golang/pushpb/pushpb.proto
+Modified : /dev/golang/statuspb/statuspb.pb.go
+Modified : /dev/golang/statuspb/statuspb.proto
+Modified : /dev/golang/statuspb_gogo/statuspb.pb.go
+Modified : /dev/golang/statuspb_gogo/statuspb.proto
+
+Revision: 5504
+Author: cym
+Date: 2015年5月11日 17:45:23
+Message:
+add push agent
+----
+Added : /dev/golang/push_agent
+Added : /dev/golang/push_agent/push_server.go
+Added : /dev/golang/push_agent/push_transport.go
+
+Revision: 5503
+Author: cym
+Date: 2015年5月11日 17:44:41
+Message:
+code refactor
+----
+Deleted : /dev/golang/status_server/force_offline.go
+Modified : /dev/golang/status_server/status_server.go
+Deleted : /dev/golang/status_server/test_get.go
+Deleted : /dev/golang/status_server/test_on_offline.go
+Deleted : /dev/golang/status_server/testpb.go
+Deleted : /dev/golang/status_server/testpb1.go
+Modified : /dev/golang/tcp_agent/lru.go
+Modified : /dev/golang/tcp_agent/parse_message.go
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+
+Revision: 4783
+Author: cym
+Date: 2015年4月13日 15:56:36
+Message:
+add gogo proto support for tcp_agent
+----
+Modified : /dev/golang/tcp_agent/lru.go
+Modified : /dev/golang/tcp_agent/parse_message.go
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+
+Revision: 4782
+Author: cym
+Date: 2015年4月13日 15:53:04
+Message:
+add gogo proto directory
+----
+Added : /dev/golang/pushpb_gogo
+Added : /dev/golang/pushpb_gogo/compile.sh
+Added : /dev/golang/pushpb_gogo/pushpb_gogo.pb.go
+Added : /dev/golang/pushpb_gogo/pushpb_gogo.proto
+Added : /dev/golang/pushpb_gogo/pushpb_gogopb_test.go
+Added : /dev/golang/statuspb_gogo
+Added : /dev/golang/statuspb_gogo/compile.sh
+Added : /dev/golang/statuspb_gogo/statuspb.pb.go
+Added : /dev/golang/statuspb_gogo/statuspb.proto
+Added : /dev/golang/statuspb_gogo/statuspbpb_test.go
+Added : /dev/golang/upstreampb_gogo
+Added : /dev/golang/upstreampb_gogo/compile.sh
+Added : /dev/golang/upstreampb_gogo/upstreampb.pb.go
+Added : /dev/golang/upstreampb_gogo/upstreampb.proto
+Added : /dev/golang/upstreampb_gogo/upstreampbpb_test.go
+
+Revision: 4781
+Author: cym
+Date: 2015年4月13日 15:43:45
+Message:
+minior fix for status_server
+----
+Modified : /dev/golang/status_server/status_server.go
+
+Revision: 4150
+Author: cym
+Date: 2015年3月19日 17:34:03
+Message:
+minior fix add flog
+----
+Modified : /dev/golang/tcp_agent/lru.go
+Modified : /dev/golang/tcp_agent/parse_message.go
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+
+Revision: 4140
+Author: cym
+Date: 2015年3月18日 17:41:10
+Message:
+add purge items for status
+----
+Modified : /dev/golang/status_server/status_server.go
+
+Revision: 4117
+Author: cym
+Date: 2015年3月16日 15:38:13
+Message:
+fix force off line problem
+----
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+
+Revision: 4116
+Author: cym
+Date: 2015年3月16日 11:07:40
+Message:
+refine counter and error
+----
+Modified : /dev/golang/tcp_agent/parse_message.go
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+
+Revision: 4115
+Author: cym
+Date: 2015年3月16日 10:06:21
+Message:
+add check allow push ip and small fixes
+----
+Modified : /dev/golang/tcp_agent/parse_message.go
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+
+Revision: 4096
+Author: cym
+Date: 2015年3月12日 16:40:08
+Message:
+refine log message
+----
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+
+Revision: 4095
+Author: cym
+Date: 2015年3月12日 16:26:07
+Message:
+add pb definition
+----
+Added : /dev/golang/isserverpb
+Added : /dev/golang/isserverpb/isserverpb.pb.go
+Added : /dev/golang/isserverpb/isserverpb.proto
+Added : /dev/golang/pushpb
+Added : /dev/golang/pushpb/pushpb.pb.go
+Added : /dev/golang/pushpb/pushpb.proto
+Added : /dev/golang/statuspb
+Added : /dev/golang/statuspb/statuspb.pb.go
+Added : /dev/golang/statuspb/statuspb.proto
+Added : /dev/golang/upstreampb
+Added : /dev/golang/upstreampb/upstreampb.pb.go
+Added : /dev/golang/upstreampb/upstreampb.proto
+
+Revision: 4094
+Author: cym
+Date: 2015年3月12日 16:24:47
+Message:
+add status server
+----
+Added : /dev/golang/status_server
+Added : /dev/golang/status_server/status_server.go
+Added : /dev/golang/status_server/force_offline.go
+Added : /dev/golang/status_server/test_get.go
+Added : /dev/golang/status_server/test_on_offline.go
+Added : /dev/golang/status_server/testpb.go
+Added : /dev/golang/status_server/testpb1.go
+
+Revision: 4093
+Author: cym
+Date: 2015年3月12日 16:22:55
+Message:
+code refactor
+----
+Deleted : /dev/golang/tcp_agent/upstream_status_server.go
+
+Revision: 4092
+Author: cym
+Date: 2015年3月12日 16:21:46
+Message:
+code refactor
+----
+Modified : /dev/golang/tcp_agent/lru.go
+Modified : /dev/golang/tcp_agent/parse_message.go
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+Modified : /dev/golang/tcp_agent/parse_test.go
+
+Revision: 3438
+Author: cym
+Date: 2015年1月20日 9:43:54
+Message:
+add reconnect function,other bug fix
+----
+Modified : /dev/golang/tcp_agent/lru.go
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+Modified : /dev/golang/tcp_agent/parse_test.go
+
+Revision: 3348
+Author: cym
+Date: 2015年1月14日 11:48:52
+Message:
+add generic type,fix lru
+----
+Modified : /dev/golang/tcp_agent/lru.go
+Modified : /dev/golang/tcp_agent/parse_message.go
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+Modified : /dev/golang/tcp_agent/parse_test.go
+
+Revision: 3284
+Author: cym
+Date: 2015年1月8日 20:37:05
+Message:
+add lru,add parse_msg,add test case,other fix
+----
+Added : /dev/golang/tcp_agent/lru.go
+Added : /dev/golang/tcp_agent/parse_message.go
+Added : /dev/golang/tcp_agent/upstream_status_server.go
+Added : /dev/golang/tcp_agent/parse_test.go
+Added : /dev/golang/tcp_agent/msg.txt
+
+Revision: 3283
+Author: cym
+Date: 2015年1月8日 20:35:51
+Message:
+add lru,add parse_msg,add test case,other fix
+----
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+
+Revision: 3090
+Author: cym
+Date: 2014年12月25日 17:59:33
+Message:
+update server logic
+----
+Modified : /dev/golang/tcp_agent/tcp_server.go
+
+Revision: 3089
+Author: cym
+Date: 2014年12月25日 17:51:17
+Message:
+update test drive
+----
+Modified : /dev/golang/libuv_test_drive/batch_connect.c
+
+Revision: 3060
+Author: cym
+Date: 2014年12月25日 9:37:09
+Message:
+
+----
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+
+Revision: 3038
+Author: cym
+Date: 2014年12月23日 17:58:02
+Message:
+add c test drive
+----
+Added : /dev/golang/libuv_test_drive
+Added : /dev/golang/libuv_test_drive/batch_connect.c
+Added : /dev/golang/libuv_test_drive/Makefile
+Added : /dev/golang/libuv_test_drive/include
+Added : /dev/golang/libuv_test_drive/include/android-ifaddrs.h
+Added : /dev/golang/libuv_test_drive/include/pthread-fixes.h
+Added : /dev/golang/libuv_test_drive/include/stdint-msvc2008.h
+Added : /dev/golang/libuv_test_drive/include/tree.h
+Added : /dev/golang/libuv_test_drive/include/uv-aix.h
+Added : /dev/golang/libuv_test_drive/include/uv-bsd.h
+Added : /dev/golang/libuv_test_drive/include/uv-darwin.h
+Added : /dev/golang/libuv_test_drive/include/uv-errno.h
+Added : /dev/golang/libuv_test_drive/include/uv-linux.h
+Added : /dev/golang/libuv_test_drive/include/uv-sunos.h
+Added : /dev/golang/libuv_test_drive/include/uv-threadpool.h
+Added : /dev/golang/libuv_test_drive/include/uv-unix.h
+Added : /dev/golang/libuv_test_drive/include/uv-version.h
+Added : /dev/golang/libuv_test_drive/include/uv-win.h
+Added : /dev/golang/libuv_test_drive/include/uv.h
+
+Revision: 2933
+Author: cym
+Date: 2014年12月16日 21:15:31
+Message:
+code refactor,add load test client
+----
+Modified : /dev/golang/tcp_agent/tcp_server.go
+Modified : /dev/golang/tcp_agent/transport.go
+Added : /dev/golang/test_dial.go
+
+Revision: 2904
+Author: cym
+Date: 2014年12月16日 9:43:16
+Message:
+
+----
+Added : /dev/golang/tcp_agent
+Added : /dev/golang/tcp_agent/tcp_server.go
+Added : /dev/golang/tcp_agent/transport.go
+Added : /dev/golang/ntest.txt
+Added : /dev/golang/readme.txt
+Added : /dev/golang/techo.go
+Added : /dev/golang/test_tcp_agent.go
+Deleted : /dev/golang/transport.go
+
+Revision: 2869
+Author: cym
+Date: 2014年12月15日 11:31:09
+Message:
+init commit of upstream logic
+----
+Added : /dev/golang/transport.go
+
+Revision: 2866
+Author: cym
+Date: 2014年12月15日 9:39:31
+Message:
+add golang dir
+
+----
+Added : /dev/golang
+

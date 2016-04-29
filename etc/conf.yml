@@ -1,0 +1,16 @@
+buffer_size: 1024
+log_list:
+  - dir: "/data/log"
+    ip: 0.0.0.0
+    port: 5050
+    log_type: mixed
+    trans_type: 0
+    trans_ip: 127.0.0.1
+    trans_port: 6251
+  - dir: "data/log_2"
+    ip: 0.0.0.0
+    port: 5051
+    log_type: mixed
+    trans_type: 2
+    trans_ip: 172.19.44.10
+    trans_port: 5050

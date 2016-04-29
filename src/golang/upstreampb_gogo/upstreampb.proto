@@ -1,0 +1,31 @@
+package upstreampb_gogo;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.gostring_all) = false;
+option (gogoproto.goproto_stringer_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.benchgen_all) = true;
+option (gogoproto.populate_all) = true;
+option (gogoproto.sizer_all) = true;
+
+message UpstreamRequest {
+        enum FieldType {
+                UID = 0;
+                DEVICEID = 1;
+        }
+
+        required uint32      net_id      = 1[(gogoproto.nullable) = false];
+        required uint32      req_id      = 2[(gogoproto.nullable) = false];
+        required FieldType   field_type  = 3[(gogoproto.nullable) = false];
+        optional uint64      uid         = 4;
+        optional string      device_id   = 5;
+        required string      body        = 6[(gogoproto.nullable) = false];
+}
+
+message UpstreamResponse {
+required uint32      net_id      = 1[(gogoproto.nullable) = false];
+required uint32      req_id  = 2[(gogoproto.nullable) = false];
+required string      body        = 3[(gogoproto.nullable) = false];
+}

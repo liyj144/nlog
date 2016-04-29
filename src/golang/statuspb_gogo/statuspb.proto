@@ -1,0 +1,105 @@
+package statuspb_gogo;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.gostring_all) = false;
+option (gogoproto.goproto_stringer_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.benchgen_all) = true;
+option (gogoproto.populate_all) = true;
+option (gogoproto.sizer_all) = true;
+
+
+message StatusRequest {
+        enum Type {
+                ONLINE = 0;
+                OFFLINE = 1;
+                GET = 2;
+                REPLICATE_ONLINE = 3;
+                REPLICATE_OFFLINE = 4;
+        }
+
+        enum FieldType {
+                UID = 0;
+                DEVICEID = 1;
+        }
+
+        required Type req_type = 1[(gogoproto.nullable) = false];
+        required FieldType field_type = 2[(gogoproto.nullable) = false];
+        optional uint64      uid       = 3;
+        optional string     app_version = 4;
+        optional string     device_id = 5;
+        optional uint32      net_id = 6;
+        optional uint64      timestamp = 7;
+        //for push server only
+        optional uint32      resume_net_id = 8;
+        //for replication server only
+        required uint32      server_id = 9[(gogoproto.nullable) = false];
+}
+
+
+message StatusResponse {
+        enum Type {
+                OK = 0;
+                FORCE_OFFLINE = 1;
+        }
+        required Type resp_type = 1[(gogoproto.nullable) = false];
+        required uint32      net_id = 2[(gogoproto.nullable) = false];
+
+}
+
+
+message StatusQueryResult {
+        required uint32 remote_net_id = 1[(gogoproto.nullable) = false];
+        required uint32  ip = 2[(gogoproto.nullable) = false];
+}
+
+message StatusQueryResponse {
+        enum Type {
+                FOUND = 0;
+                NOT_FOUND = 1;
+        }
+        required Type resp = 1[(gogoproto.nullable) = false];
+        required uint32 resume_net_id = 2[(gogoproto.nullable) = false];
+        repeated StatusQueryResult result = 3;
+
+}
+
+//status_persistence
+
+message StatusMap {
+        message KVUserStatus {
+                        message UserStatus {
+                required  string device_id = 1[(gogoproto.nullable) = false];
+                required  uint64 timestamp  = 2[(gogoproto.nullable) = false];
+                required  uint32 server_id  = 3[(gogoproto.nullable) = false];
+                required  uint32 net_id     = 4[(gogoproto.nullable) = false];
+                required  uint32 app_version     = 5[(gogoproto.nullable) = false];
+                }
+        required uint64 Key = 1[(gogoproto.nullable) = false];
+        repeated UserStatus Values = 2;
+
+        }
+        repeated KVUserStatus map = 1;
+}
+
+message StringToIntMap {
+        message STI {
+                required string str = 1[(gogoproto.nullable) = false];
+                required uint32 intger = 2[(gogoproto.nullable) = false];
+        }
+        repeated STI map = 1;
+}
+
+message AnonymousMap {
+        message AnonymousEntry {
+                required string dev_id = 1[(gogoproto.nullable) = false];
+                required uint64 timestamp = 2[(gogoproto.nullable) = false];
+                required uint32 net_id    = 3[(gogoproto.nullable) = false];
+                required uint32 server_id = 4[(gogoproto.nullable) = false];
+        }
+
+
+        repeated AnonymousEntry map = 1;
+}

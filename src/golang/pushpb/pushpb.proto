@@ -1,0 +1,17 @@
+package pushpb;
+
+message PushRequestFromUpstream {
+        enum FieldType {
+                UID = 0;
+                DEVICEID = 1;
+        }
+        required FieldType field_type = 1;
+        optional uint64       user_id = 2;
+        optional bytes      device_id = 3;
+        required bytes        payload = 4;
+}
+
+message PushRequestToDownstream {
+required uint32      net_id      = 1;
+required bytes       payload       = 2;
+}

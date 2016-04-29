@@ -1,0 +1,12 @@
+#!/bin/ntest
+# Use a new socket, and ask restAgent to set some parameters for this socket
+socket://127.0.0.1:8999
+
+^5,sleep 10
+*{
+        "needbody" : "1"
+}
+~need
+
+
+close socket
